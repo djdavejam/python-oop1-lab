@@ -24,13 +24,14 @@ class TestCoffee:
         assert captured_out.getvalue() == "size must be Small, Medium, or Large\n"
 
     def test_can_tip(self):
-        '''says that the shoe has been repaired.'''
-        americano = Coffee(size = "Large", price = 3.50)
+        '''says that the coffee has been tipped.'''
+        americano = Coffee(size="Large", price=3.50)
         captured_out = io.StringIO()
         sys.stdout = captured_out
         americano.tip()
         sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == "This coffee is great, here’s a tip!\n")
+        assert(captured_out.getvalue() == "This coffee is great, here's a tip!\n")
+
     
     def test_tip_adds_to_price(self):
         '''adds 1 to price of coffee'''
